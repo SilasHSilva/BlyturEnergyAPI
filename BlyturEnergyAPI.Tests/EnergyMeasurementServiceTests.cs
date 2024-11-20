@@ -1,11 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BlyturEnergyAPI.Domain.Models;
 using BlyturEnergyAPI.Infrastructure.Interfaces;
 using BlyturEnergyAPI.Application.Services;
 using Moq;
-using Xunit;
 
 namespace BlyturEnergyAPI.Tests.Services
 {
@@ -27,9 +23,9 @@ namespace BlyturEnergyAPI.Tests.Services
             var turbineId = "turbine123";
             var measurements = new List<EnergyMeasurement>
             {
-                new EnergyMeasurement { Id = "1", TurbineId = turbineId, EnergyProduced = 100.5, MeasurementDate = DateTime.UtcNow },
-                new EnergyMeasurement { Id = "2", TurbineId = turbineId, EnergyProduced = 200.0, MeasurementDate = DateTime.UtcNow.AddMinutes(-10)},
-                new EnergyMeasurement { Id = "3", TurbineId = turbineId, EnergyProduced = 200.0, MeasurementDate = DateTime.UtcNow.AddMinutes(50)}
+                new() { Id = "1", TurbineId = turbineId, EnergyProduced = 100.5, MeasurementDate = DateTime.UtcNow },
+                new() { Id = "2", TurbineId = turbineId, EnergyProduced = 200.0, MeasurementDate = DateTime.UtcNow.AddMinutes(-10)},
+                new() { Id = "3", TurbineId = turbineId, EnergyProduced = 200.0, MeasurementDate = DateTime.UtcNow.AddMinutes(50)}
             };
 
             _mockRepository
