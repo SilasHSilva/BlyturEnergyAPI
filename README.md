@@ -96,7 +96,6 @@ A aplicação segue os princípios de separação de responsabilidades, utilizan
     Acesse o Swagger em `http://localhost:5203/swagger`
 
 ### Estrutura de pastas
-    ```bash
     BlyturEnergyAPI/
     ├──BlyturEnergyAPI/
     |   ├── Controllers/
@@ -124,7 +123,6 @@ A aplicação segue os princípios de separação de responsabilidades, utilizan
     │   ├── TurbineServiceTests.cs
     |   ├── BlyturEnergyAPI.Tests.cs
 
-```
 
 ## Fluxo de Funcionamento  
 
@@ -135,7 +133,6 @@ A aplicação segue os princípios de separação de responsabilidades, utilizan
    Cada turbina pode registrar medições de energia associadas a ela. As medições podem ser consultadas por ID da turbina, permitindo análise detalhada do desempenho de cada unidade.
 
 ---
-
 ## Integrantes do Grupo
 
 - Eduardo Bezerra – RM: 98890
