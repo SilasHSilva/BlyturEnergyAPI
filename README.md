@@ -78,7 +78,7 @@ A aplicação segue os princípios de separação de responsabilidades, utilizan
 ### Como Executar  
 1. Clone o repositório:  
    ```bash
-   git clone https://github.com/SilasHSilva/BlyturEnergyAPI.git
+   git clone https://github.com/SilasHSilva BlyturEnergyAPI.git
    cd blytur-energy-api
 
 2. Configure a string de conexão do MongoDB no arquivo appsettings.json:
@@ -92,37 +92,39 @@ A aplicação segue os princípios de separação de responsabilidades, utilizan
     ```bash
     dotnet run
 
-### Estrutura de pastas
-
-BlyturEnergyAPI/
-├──BlyturEnergyAPI/
-|   ├── Controllers/
-|   │   ├── EnergyMeasurementController.cs
-|   │   ├── TurbineController.cs
-|   ├── Interfaces/
-|   │   ├── IEnergyMeasurementRepository.cs
-|   │   ├── ITurbineRepository.cs
-|   ├── Models/
-|   │   ├── EnergyMeasurement.cs
-|   │   ├── Turbine.cs
-|   ├── Repositories/
-|   │   ├── EnergyMeasurementRepository.cs
-|   │   ├── TurbineRepository.cs
-|   ├── Services/
-|   │   ├── EnergyMeasurementService.cs
-|   │   ├── TurbineService.cs
-|   ├── appsettings.json
-|   ├── appsettings.Development.json
-|   ├── BlyturEnergyAPI.csproj
-|   ├── BlyturEnergyAPI.http
-|   ├── Program.cs
-├── BlyturEnergyAPI.Tests/
-│   ├── EnergyMeasurementServiceTests.cs
-│   ├── TurbineServiceTests.cs
-|   ├── BlyturEnergyAPI.Tests.cs
-
 4. Acesse a documentação da API:
     Acesse o Swagger em `http://localhost:5203/swagger`
+
+### Estrutura de pastas
+    ```bash
+    BlyturEnergyAPI/
+    ├──BlyturEnergyAPI/
+    |   ├── Controllers/
+    |   │   ├── EnergyMeasurementController.cs
+    |   │   ├── TurbineController.cs
+    |   ├── Interfaces/
+    |   │   ├── IEnergyMeasurementRepository.cs
+    |   │   ├── ITurbineRepository.cs
+    |   ├── Models/
+    |   │   ├── EnergyMeasurement.cs
+    |   │   ├── Turbine.cs
+    |   ├── Repositories/
+    |   │   ├── EnergyMeasurementRepository.cs
+    |   │   ├── TurbineRepository.cs
+    |   ├── Services/
+    |   │   ├── EnergyMeasurementService.cs
+    |   │   ├── TurbineService.cs
+    |   ├── appsettings.json
+    |   ├── appsettings.Development.json
+    |   ├── BlyturEnergyAPI.csproj
+    |   ├── BlyturEnergyAPI.http
+    |   ├── Program.cs
+    ├── BlyturEnergyAPI.Tests/
+    │   ├── EnergyMeasurementServiceTests.cs
+    │   ├── TurbineServiceTests.cs
+    |   ├── BlyturEnergyAPI.Tests.cs
+
+```
 
 ## Fluxo de Funcionamento  
 
