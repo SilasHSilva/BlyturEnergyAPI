@@ -6,10 +6,22 @@ using MongoDB.Driver;
 var builder = WebApplication.CreateBuilder(args);
 
 // MongoDB Configuration
-builder.Services.AddSingleton<IMongoClient, MongoClient>(_ => 
-    new MongoClient(builder.Configuration.GetConnectionString("MongoDb")));
-builder.Services.AddScoped<IMongoDatabase>(provider => 
-    provider.GetService<IMongoClient>().GetDatabase("BlyturEnergy"));
+var mongoDbConnection = Environment.GetEnvironmentVariable("ConnectionStrings__MongoDb") 
+                        ?? builder.Configuration.GetConnectionString("MongoDb");
+var databaseName = Environment.GetEnvironmentVariable("DatabaseName") 
+                   ?? builder.Configuration["DatabaseName"];
+
+if (string.IsNullOrEmpty(mongoDbConnection) || string.IsNullOrEmpty(databaseName))
+{
+    throw new ArgumentNullException("MongoDb connection string or database name is not configured.");
+}
+
+builder.Services.AddSingleton<IMongoClient, MongoClient>(_ =>
+    new MongoClient(mongoDbConnection));
+
+builder.Services.AddScoped<IMongoDatabase>(provider =>
+    provider.GetService<IMongoClient>().GetDatabase(databaseName));
+
 
 // Dependency Injection
 builder.Services.AddScoped<ITurbineRepository, TurbineRepository>();
